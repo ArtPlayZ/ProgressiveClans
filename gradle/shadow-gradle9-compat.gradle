@@ -1,0 +1,16 @@
+// Gradle 9 removed FileCopyDetails.mode, but Shadow 8.1.1 still reads it.
+// This compatibility shim restores a read-only mode getter for the copy details
+// types used by ShadowJar, so the original Shadow version can run on Gradle 9.
+def copyDetailTypes = [
+    'org.gradle.api.internal.file.copy.NormalizingCopyActionDecorator$StubbedFileCopyDetails',
+    'org.gradle.api.internal.file.copy.DefaultFileCopyDetails',
+    'org.gradle.api.internal.file.copy.DefaultFileCopyDetails_Decorated'
+]
+
+copyDetailTypes.each { typeName ->
+    try {
+        Class.forName(typeName).metaClass.getMode = { -> 0644 }
+    } catch (Throwable ignored) {
+        // Some decorated classes are generated lazily; the base type is enough.
+    }
+}

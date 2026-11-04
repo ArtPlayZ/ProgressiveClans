@@ -1,0 +1,28 @@
+clan:
+  # Радиус территории клана на первом уровне базы (блоки).
+  baseRadius: 50
+  # Кулдаун установки/переноса базы в часах.
+  setbaseCooldownHours: 24
+
+spawn:
+  # Пустая карта: лимиты спавна выключены до добавления миров.
+  # Пример:
+  # worlds:
+  #   world:
+  #     zones:
+  #       - type: surface
+  #         chance: 0.25
+  #         max-mobs: 80
+  #       - type: height
+  #         min-y: 0
+  #         max-y: 60
+  #         chance: 0.5
+  #         max-mobs: 20
+  #       - type: rect
+  #         min-x: -100
+  #         min-z: -100
+  #         max-x: 100
+  #         max-z: 100
+  #         chance: 0.3
+  #         max-mobs: 10
+  worlds: {}

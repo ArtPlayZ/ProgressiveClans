@@ -1,0 +1,15 @@
+name: ProgressiveClans
+version: 1.0.0
+main: artplay.ProgressiveClansPlugin
+api-version: '1.21'
+authors: [artplay]
+description: Кланы с прогрессивной базой, налогом для новичков и лимитами спавна.
+commands:
+  clan:
+    description: Управление кланом
+    usage: /clan <create|invite|join|leave|info|pay|setbase|upgrade|list>
+    aliases: [clans]
+permissions:
+  progressiveclans.use:
+    description: Базовый доступ к команде /clan
+    default: true
